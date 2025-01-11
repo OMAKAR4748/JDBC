@@ -1,12 +1,17 @@
 package com.xworkz.project.runner;
 
+import com.xworkz.project.repo.ProjectEntityRepo;
+import com.xworkz.project.repo.ProjectEntityRepoImpl;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ProjectInsert {
-    public static void main(String[] args) {
+    public static void main(String[] args){
+
+        ProjectEntityRepo projectEntityRepo =new ProjectEntityRepoImpl();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
