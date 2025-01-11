@@ -33,51 +33,51 @@ public class Bus {
             statement.addBatch(insert3);
 
 
-            int[] row = statement.executeBatch();
+            statement.executeBatch();
             System.out.println("no of row insert:"+row.length);
             System.out.println("-----------");
 
             // Retrieve all data from the table
-//            String query = "SELECT * FROM books";
-//            ResultSet resultSet = statement.executeQuery(query);
-//            while (resultSet.next()) {
-//                System.out.println("Book ID: " + resultSet.getInt(1));
-//                System.out.println("Title: " + resultSet.getString(2));
-//                System.out.println("Genre: " + resultSet.getString(3));
-//                System.out.println("Publish Date: " + resultSet.getDate(4));
-//                System.out.println("-----------");
-//            }
+           String select = "SELECT * FROM books";
+           ResultSet resultSet = statement.executeQuery(select);
+           while (resultSet.next()) {
+               System.out.println("Book ID: " + resultSet.getInt(1));
+               System.out.println("Title: " + resultSet.getString(2));
+               System.out.println("Genre: " + resultSet.getString(3));
+               System.out.println("Publish Date: " + resultSet.getDate(4));
+               System.out.println("-----------");
+           }
 
             // Retrieve data by ID
-//            String Id = "SELECT * FROM books WHERE book_id = 2";
-//           ResultSet resultSet = statement.executeQuery(Id);
-//            if (resultSet.next()) {
-//                System.out.println("Book ID: " + resultSet.getInt(1));
-//                System.out.println("Title: " + resultSet.getString(2));
-//                System.out.println("Genre: " + resultSet.getString(3));
-//                System.out.println("Publish Date: " + resultSet.getDate(4));
-//                System.out.println("-----------");
-//            }
+           String Id = "SELECT * FROM books WHERE book_id = 2";
+          ResultSet resultSet1 = statement.executeQuery(Id);
+           if (resultSet1.next()) {
+               System.out.println("Book ID: " + resultSet1.getInt(1));
+               System.out.println("Title: " + resultSet1.getString(2));
+               System.out.println("Genre: " + resultSet1.getString(3));
+               System.out.println("Publish Date: " + resultSet1.getDate(4));
+               System.out.println("-----------");
+           }
 
             // Retrieve data by a specific field
-//            String query = "SELECT * FROM books WHERE genre = 'Fantasy'";
-//            ResultSet resultSet = statement.executeQuery(query);
-//            while (resultSet.next()) {
-//                System.out.println("Book ID: " + resultSet.getInt(1));
-//                System.out.println("Title: " + resultSet.getString(2));
-//                System.out.println("Genre: " + resultSet.getString(3));
-//                System.out.println("Publish Date: " + resultSet.getDate(4));
-//                System.out.println("-----------");
-//            }
+           String query = "SELECT * FROM books WHERE genre = 'Fantasy'";
+           ResultSet resultSet2 = statement.executeQuery(query);
+           while (resultSet2.next()) {
+               System.out.println("Book ID: " + resultSet2.getInt(1));
+               System.out.println("Title: " + resultSet2.getString(2));
+               System.out.println("Genre: " + resultSet2.getString(3));
+               System.out.println("Publish Date: " + resultSet2.getDate(4));
+               System.out.println("-----------");
+           }
 
             // Retrieve data by ID and a specific field
              String query = "SELECT * FROM books WHERE book_id =3 AND genre = 'RockStar'";
-           ResultSet resultSet = statement.executeQuery(query);
-            if (resultSet.next()) {
-                System.out.println("Book ID: " + resultSet.getInt(1));
-                System.out.println("Title: " + resultSet.getString(2));
-                System.out.println("Genre: " + resultSet.getString(3));
-                System.out.println("Publish Date: " + resultSet.getDate(4));
+           ResultSet resultSet3 = statement.executeQuery(query);
+            if (resultSet3.next()) {
+                System.out.println("Book ID: " + resultSet3.getInt(1));
+                System.out.println("Title: " + resultSet3.getString(2));
+                System.out.println("Genre: " + resultSet3.getString(3));
+                System.out.println("Publish Date: " + resultSet3.getDate(4));
                 System.out.println("-----------");
             }
 
